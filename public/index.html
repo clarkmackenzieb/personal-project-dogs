@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="personalProjApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    
+    <!-- BRING IN YA CSS -->
+    <link rel="stylesheet" href="./component/navbar/navbarstyles.css">
+    <link rel="stylesheet" href="./component/dog-voting/voting.css">
+    <link rel="stylesheet" href="./component/home/home.css">
+    <link rel="stylesheet" href="./component/upload-page/upload.css">
+    <link rel="stylesheet" href="./component/user/user.css">
+    <link rel="stylesheet" href="./component/adoption-page/adoption.css">
+
+    <title>Personal-Project</title>
+</head>
+<body>
+    
+    <ui-view></ui-view>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>    
+
+<script src="./mainapp.js"></script>
+<script src="./routesapp.js"></script>
+<script src="./mainCtrl.js"></script>
+<script src="./mainSrvc.js"></script>
+
+<script src="./component/adoption-page/adoptionCtrl.js"></script>
+<script src="./component/dog-voting/votingCtrl.js"></script>
+<script src="./component/home/homeCtrl.js"></script>
+<script src="./component/upload-page/uploadCtrl.js"></script>
+<script src="./component/user/userCtrl.js"></script>
+<script src="./component/navbar/navBarDir.js"></script>
+<script src="./component/login/loginCtrl.js"></script>
+
+</html>

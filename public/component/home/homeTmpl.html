@@ -1,0 +1,12 @@
+<nav-bar-dir></nav-bar-dir>
+<h1>TEST</h1>
+
+<button class = "btn btn-primary" ng-click="getADogPicture()">Try Clicking</button>
+
+<div><img src="{{dogpic}}" alt="notworking"></div>
+
+
+<!-- Go to Login View -->
+<a ui-sref="login" ng-if="!user.authid"><span>login</span></a>
+<!-- Logout your user, if not user, button won't display -->
+<a href="/auth/logout" ng-if="user.authid"><span>logout!</span></a>

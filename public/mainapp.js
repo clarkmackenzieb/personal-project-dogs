@@ -1,0 +1,1 @@
+angular.module('personalProjApp', ['ui.router']);
