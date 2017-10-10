@@ -27,7 +27,8 @@ app.use(json());
 app.use(cors());
 app.use(express.static(`${__dirname}/../public`));
 
-massive(connectionString).then(db => app.set('db', db));
+massive(connectionString).then(db => {
+    app.set('db', db)});
 
 // put passport stuff here cause that shit is WILD
 // setting up express sessions
@@ -51,14 +52,14 @@ passport.use(new Auth0Strategy({
     callbackURL:  '/login/callback'
    }, (accessToken, refreshToken, extraParams, profile, done) => {
      //Find user in database
-     console.log(profile.id);
+     console.log(+profile._json.sub.split("|").pop());
      const db = app.get('db');
      // .then means this is a promise
-     db.getUserByAuthId([profile.id]).then((user, err) => {
+     db.getUserByAuthId([+profile._json.sub.split("|").pop()]).then((user, err) => {
          console.log('INITIAL: ', user);
        if (!user[0]) { //if there isn't a user, we'll create one!
          console.log('CREATING USER');
-         db.createUserByAuth([profile.displayName, profile.id]).then((user, err) => {
+         db.createUserByAuth(["profile.displayName",+profile._json.sub.split("|").pop()]).then((user, err) => {
            console.log('USER CREATED', user[0]);
            return done(err, user[0]); // GOES TO SERIALIZE USER
          })
@@ -66,7 +67,7 @@ passport.use(new Auth0Strategy({
          console.log('FOUND USER', user[0]);
          return done(err, user[0]);
        }
-     });
+     }).catch(err => {console.log(err)})
    }
  ));
 
@@ -112,4 +113,5 @@ app.get('/user/logout', (req, res) => {
 
 app.listen(port, ()=>{
     console.log(`I'll be right by your side till ${port}`)
+    console.log();
 });

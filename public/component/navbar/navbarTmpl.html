@@ -1,7 +1,10 @@
-<div class="nav-color nav-bar">
-    <h1>BUTTON</h1>
-    <h1>Link</h1>
-    <h1>Link</h1>
-    <h1>Link</h1>
-    <h1>Login</h1>
+<div class="nav-bar">
+    <h1 class="nav-color yellow">BUTTON</h1>
+    <h1 class="nav-color blue">Link</h1>
+    <h1 class="nav-color yellow">Link</h1>
+    <h1 class="nav-color blue">Link</h1>
+    <h1 class="nav-color yellow login"  ui-sref="login" ng-if="!user.authid">Login</h1>
 </div>
+
+
+<!-- <a href="/auth/logout" ng-if="user.authid"><span>logout!</span></a> -->
