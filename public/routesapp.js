@@ -18,7 +18,7 @@ angular.module('personalProjApp')
             .state('upload', {
                 url: '/spotadog',
                 templateUrl: './component/upload-page/uploadTmpl.html',
-                controller: 'uploadCtrl',
+                controller: 'mainCtrl',
                 // resolve: {} 
             })
             .state('adoption', {

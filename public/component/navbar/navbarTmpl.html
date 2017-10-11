@@ -1,9 +1,9 @@
 <div class="nav-bar">
-    <h1 class="nav-color yellow">BUTTON</h1>
-    <h1 class="nav-color blue">Link</h1>
-    <h1 class="nav-color yellow">Link</h1>
-    <h1 class="nav-color blue">Link</h1>
-    <h1 class="nav-color yellow login"  ui-sref="login" ng-if="!user.authid">Login</h1>
+    <h1 ui-sref="home" class="nav-color yellow pointy-cursor">Home</h1>
+    <h1 ui-sref="upload" class="nav-color blue pointy-cursor">The Dog Log</h1>
+    <h1 ui-sref="voting" class="nav-color yellow pointy-cursor">Dog Vote</h1>
+    <h1 ui-sref="adoption" class="nav-color blue pointy-cursor">Adoption</h1>
+    <h1 class="nav-color yellow pointy-cursor"   ng-if="!user.authid"><a href="/login" id="login">Login</a></h1>
 </div>
 
 

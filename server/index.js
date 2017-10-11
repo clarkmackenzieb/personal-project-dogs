@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const { json } = require('body-parser');
 const massive = require('massive');
 const session = require('express-session');
@@ -7,7 +7,7 @@ const cors = require('cors');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 
-const dogAPICtrl = require('./dogAPICtrl');
+const imgCtrl = require('./imgCtrl');
 
 const config = require('./config');
 const { secret } = require('./config');
@@ -24,6 +24,7 @@ const connectionString = `postgress://${dbUser}:${dbPass}@localhost/${database}`
 const app = express();
 
 app.use(json());
+// app.use(bodyParser.json({limit: '50mb'}));
 app.use(cors());
 app.use(express.static(`${__dirname}/../public`));
 
@@ -107,9 +108,13 @@ app.get('/user/logout', (req, res) => {
     res.redirect('/');
 });
 
+// passport ^ 
+// other endpoints v 
 
-//API Endpoints
-// app.get('https://dog.ceo/api/breeds/image/random', dogAPICtrl.randomdog);
+app.post('/api/image', imgCtrl.uploadImages);
+app.post('/api/dogupdate', imgCtrl.updateDogs);
+app.get('/api/getdogs', imgCtrl.getDogs);
+
 
 app.listen(port, ()=>{
     console.log(`I'll be right by your side till ${port}`)

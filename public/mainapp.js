@@ -1,1 +1,1 @@
-angular.module('personalProjApp', ['ui.router']);
+angular.module('personalProjApp', ['ui.router', 'ngFileUpload']);

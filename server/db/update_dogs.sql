@@ -1,0 +1,1 @@
+INSERT INTO dogs (dog_picture, dog_name, breed, age, location_city, location_state) VALUES (${downloadURL}, ${dogname}, ${dogbreed}, ${dogage}, ${dogcity}, ${dogstate});
