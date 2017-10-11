@@ -12,7 +12,7 @@ angular.module('personalProjApp')
             .state('user', {
                 url: '/userpage',
                 templateUrl: './component/user/userTmpl.html',
-                controller: 'userCtrl',
+                controller: 'mainCtrl',
                 // resolve: {} 
             })
             .state('upload', {
@@ -24,19 +24,19 @@ angular.module('personalProjApp')
             .state('adoption', {
                 url: '/adoptadog',
                 templateUrl: './component/adoption-page/adoptionTmpl.html',
-                controller: 'adoptionCtrl',
+                controller: 'mainCtrl',
                 // resolve: {} 
             })
             .state('voting', {
                 url: '/dogvote',
                 templateUrl: './component/dog-voting/votingTmpl.html',
-                controller: 'votingCtrl',
+                controller: 'mainCtrl',
                 // resolve: {} 
             })
             .state('login', {
                 url: '/login',
                 templateUrl: './component/login/loginTmpl.html',
-                controller: 'loginCtrl',
+                controller: 'mainCtrl',
                 // resolve: {} 
             })
 

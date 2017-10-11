@@ -114,6 +114,7 @@ app.get('/user/logout', (req, res) => {
 app.post('/api/image', imgCtrl.uploadImages);
 app.post('/api/dogupdate', imgCtrl.updateDogs);
 app.get('/api/getdogs', imgCtrl.getDogs);
+app.post('/api/favoritedog', imgCtrl.favoriteDog)
 
 
 app.listen(port, ()=>{

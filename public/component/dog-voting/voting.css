@@ -1,5 +1,40 @@
+.body {
+    background-color: #FFF8F0;
+}
+
 .background-container {
     background-color: #FFF8F0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+}
+
+.rows-of-pics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.imgbox {
+    height: 300px;
+    width: auto;
+}
+
+.picture-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.width-control {
+    width: 200px;
+    display: flex;
+}
+
+.justify-center {
+    justify-content: space-around;
+    align-content: auto;
+}
+
+.search-bar {
+    background-color: #FFF8F0;
 }

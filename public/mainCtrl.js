@@ -4,6 +4,15 @@ angular.module('personalProjApp').controller('mainCtrl', function ($scope, mainS
         mainSrvc.uploadImage(file, dogname, dogbreed, dogage, dogcity, dogstate)
       }
     
-    $scope.dogs = mainSrvc.getDogs();  
+    mainSrvc.getDogs().then(res => $scope.dogs = res.data);  
 
+    $scope.favorite = function(user, dog){
+        mainSrvc.favoriteDog(user, dog); 
+    }
+
+    $scope.sortProp;
+    
+    $scope.sortDirection;
+
+        
 })

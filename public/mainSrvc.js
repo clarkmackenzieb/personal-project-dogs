@@ -8,7 +8,11 @@ angular.module('personalProjApp').service('mainSrvc', function($http){
         return promise;
     }
 
-    this.getDogs = () => $http.get('/api/getdogs');
+    this.getDogs = () => {
+        console.log("mainSrvc")
+        return $http.get('/api/getdogs')
+        console.log(response)
+    };
 
     this.getUser = () => $http.get('/login');
 
@@ -59,6 +63,12 @@ angular.module('personalProjApp').service('mainSrvc', function($http){
     
     }
 
-    
+    this.favoriteDog = (user, dog) => {
+        let headers = {
+            user: user,
+            dog: dog
+        }
+        return $http.get('/api/favoritedog', headers)
+    }
 
 });

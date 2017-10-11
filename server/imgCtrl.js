@@ -15,13 +15,19 @@ const updateDogs = (req, res) => {
 
 const getDogs = (req, res) => {
   console.log(req.body)
-  return req.app 
-            .get('db')
-            .get_dogs();
+  req.app.get('db').get_dogs().then(response => res.json(response))
 }
+
+const favoriteDog = (req, res) => {
+  console.log(req.body)
+  req.app 
+    .get('db')
+    .favorite_dog(req.body)
+} 
 
 module.exports = {
     uploadImages,
     updateDogs,
-    getDogs
+    getDogs,
+    favoriteDog
   }

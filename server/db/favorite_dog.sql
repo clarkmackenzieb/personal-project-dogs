@@ -1,0 +1,1 @@
+INSERT INTO favorites (authid, dog_id) VALUES ($1, $2);
