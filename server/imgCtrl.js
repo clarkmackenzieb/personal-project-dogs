@@ -22,5 +22,6 @@ const getDogs = (req, res) => {
 
 module.exports = {
     uploadImages,
-    updateDogs
+    updateDogs,
+    getDogs
   }
