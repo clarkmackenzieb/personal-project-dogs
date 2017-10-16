@@ -5,12 +5,12 @@
 
                 <form class="width-control" role="form">
                         <div class="search-bar">
-                          <input class="form-control" placeholder="Search Name" ng-model="searchFilter.dog_name">
+                          <input class="form-control" placeholder="Search Name" ng-model="searchFilter.date_uploaded">
                           <input class="form-control" placeholder="Search State" ng-model="searchFilter.location_state">
                           <input class="form-control" placeholder="Search Breed" ng-model="searchFilter.breed">
                   
                           <select class="form-control" ng-model="sortProp">
-                            <option value="dog_name">Name</option>
+                            <option value="date_uploaded">Date Uploaded</option>
                             <option value="votes">#Votes</option>
                             <option value="location_city">City</option>
                             <option value="loation_state">State</option>
@@ -24,56 +24,21 @@
                         </div>
                       </form>
 
+                      
 
             </div>
     <div class="rows-of-pics">
-    <div class="picture-container" ng-repeat="dog in dogs  | filter: searchFilter | orderBy: sortDirection + sortProp;">
+    <div class="picture-container" ng-repeat="dog in dogs  | filter: searchFilter | orderBy: '+'+'dog_name' | orderBy: sortDirection + sortProp;">
         <img class="imgbox" src="{{dog.dog_picture}}" alt="" srcset="">
         <p ng-model="dogname">{{dog.dog_name}}</p>
         <p>{{dog.breed}}</p>
         <p>Age: {{dog.age}}</p>
         <p>Spotted in {{dog.location_city}}, {{dog.location_state}}</p>
+        <p ng-model="dogvotes">{{dog.votes}}
+        <img class="upvote-button" src="../../photos/corgi1600.png" ng-click="upvoteDog(dog.dog_id)" alt="notworking">
+        <img class="favorite-button" src="../../photos/heart.png" alt="not working" ng-click="favoriteDog(dog.dog_id)"></p>
+        
     </div>
 </div>
 </div>
 
-
-
-<!-- 
-    example from cookie chat
-
-<div class="filter">
-        <input class="form-control text-box" type="text" ng-model="searchFilter" placeholder="Filter by Message">
-        </div>
-
-        <p class="indvmess"ng-repeat="message in messages | filter: searchFilter"></p>
-
-example from angular friends
-
-            <form class="form-inline searchForm" role="form">
-      <div class="form-group">
-        <input class="form-control" placeholder="Search Name" ng-model="searchFilter.dog_name">
-        <input class="form-control" placeholder="Search State" ng-model="searchFilter.location_state">
-
-        <select class="input-medium" ng-model="sortProp">
-          <option value="dog_name">Name</option>
-          <option value="votes">#Votes</option>
-          <option value="location_city">City</option>
-          <option value="loation_state">State</option>
-        </select>
-
-        <select class="input-medium" ng-model="sortDirection">
-          <option value="-">Descending</option>
-          <option value="+">Ascending</option>
-        </select>
-  
-      </div>
-    </form>
-
-    <ul >
-      <li class='friend' ng-repeat="friend in friends | filter: searchFilter | orderBy: sortDirection + sortProp;">
-        <img class="profile-pic" ng-src={{friend.pic_square}}>
-        <h3>{{friend.name}}</h3>
-        <div class="location">
-
-        -->

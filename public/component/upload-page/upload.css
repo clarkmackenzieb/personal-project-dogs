@@ -1,9 +1,9 @@
 .container-div {
     background-image: url('../../photos/james-bold-287536.jpg');
-    background-size: 100%;
+    background-size: 105%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 800px;
+    height: 100vh;
     display: flex;
 }
 
@@ -12,19 +12,24 @@ form {
     flex-direction: column;
     margin: 50px 50px;
     justify-content: space-between;
-    height: 200px;
+    height: 400px;
+}
+
+.margin-bottom {
+    margin-bottom: 25px;
 }
 
 .img-box {
-    height: 300px;
-    width: auto;
-    background: rgba(0,0,0,0.7);
+    height: 500px;
+    width: auto; 
+    margin: 50px 50px;
+    border: solid 5px #240115;
+    border-radius: 10px;
 }
 
 .btn {
     background-color: #A07178;
     color: white;
-    margin: 10px 10px;
 }
 
 input {

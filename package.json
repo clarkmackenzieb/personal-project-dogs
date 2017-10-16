@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/clarkmackenzieb/personal-project-dogs#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.1",
@@ -25,6 +26,7 @@
     "massive": "^4.3.0",
     "ng-file-upload": "^12.2.13",
     "passport": "^0.4.0",
-    "passport-auth0": "^0.6.0"
+    "passport-auth0": "^0.6.0",
+    "stripe": "^5.1.1"
   }
 }

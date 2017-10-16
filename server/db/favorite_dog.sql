@@ -1,1 +1,1 @@
-INSERT INTO favorites (authid, dog_id) VALUES ($1, $2);
+INSERT INTO favorites (userid, dogid) VALUES (${userid}, ${dogid});

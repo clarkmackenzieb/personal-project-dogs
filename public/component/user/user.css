@@ -1,0 +1,17 @@
+.background-color {
+    background-color: #FFF8F0;
+    font-family: Pacifico;
+    margin: 10px 10px;
+}
+
+.form-box {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+}
+
+.input-box {
+    margin: 10px 500px;
+    width: 200px;
+    height: 40px;
+}

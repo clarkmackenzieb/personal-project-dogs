@@ -1,2 +1,27 @@
 <nav-bar-dir></nav-bar-dir>
-<h1>TEST</h1>
+<div class="background-color">
+<h1>Welcome back, {{user.username}}!</h1>
+
+<h5>Please consider making a donation to the American Society for the Prevention of Cruelty to Animals! Even a small donation can change an animal's life.</h5>
+<div class="form-box">
+<form>
+    <input class="input-box" type="text" ng-model="donatetotal" placeholder="Donation Amount">
+    <button class="input-box btn btn-sucess" ng-click="openPayment()">Make Donation</button>
+</form>
+</div>
+
+<h3>Favorite Dogs</h3>
+<div class="rows-of-pics">
+<div class="flex" ng-repeat="fav in user_favs">
+
+    <img class="imgbox" src="{{fav.dog_picture}}" alt="" srcset="">
+</div>
+</div>
+<h3>Uploaded Dogs</h3>
+<div class="rows-of-pics">
+<div class="flex" ng-repeat="dog in user_dogs">
+
+    <img class="imgbox" src="{{dog.dog_picture}}" alt="" srcset="">
+</div>
+</div>
+</div>

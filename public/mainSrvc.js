@@ -9,14 +9,34 @@ angular.module('personalProjApp').service('mainSrvc', function($http){
     }
 
     this.getDogs = () => {
-        console.log("mainSrvc")
         return $http.get('/api/getdogs')
-        console.log(response)
     };
 
-    this.getUser = () => $http.get('/login');
+    this.getAdopt = (location, size, breed, age) => {
+        let request = "http://api.petfinder.com/pet.find?key=9d6a47d438e8fbfbcfc69f98cab12a30&animal=dog&format=json"
+        if(location != undefined){
+            request += ("&location="+location);
+         }
+        if(size != undefined){
+            request += ("&size="+size);
+         }
+        if(breed != undefined){
+            request += ("&breed="+breed);
+         }
+        if(age != undefined){
+            request += ("&age="+age);
+         }   
+       
+    
+        
+        return $http.post('/api/getadoptdogs', {request}).catch(err => console.log(err));
+    }
 
-    this.uploadImage = (file, dogname, dogbreed, dogage, dogcity, dogstate) => {
+    this.getShelter = (shelterlocation) => {
+        return $http.get("http://api.petfinder.com/shelter.find?key=9d6a47d438e8fbfbcfc69f98cab12a30&format=json&location="+shelterlocation);
+    }
+
+    this.uploadImage = (file, dogname, dogbreed, dogage, dogcity, dogstate, thedate, userid) => {
         console.log("working")
         const storageRef = firebase.storage().ref();
         const uploadTask = storageRef.child('images/' + file.name).put(file);
@@ -32,43 +52,76 @@ angular.module('personalProjApp').service('mainSrvc', function($http){
     
         }, function() {
             let downloadURL = [uploadTask.snapshot.downloadURL];
-            console.log(downloadURL)
-            console.log(dogname)
+            if(downloadURL){
 
-            // return $http({
-            //     method: "POST",
-            //     url: "/api/dogupdate",
-            //     headers: {
-            //         "downloadURL": downloadURL,
-            //         "dogname": dogname,
-            //         'dogbreed': dogbreed,
-            //         'dogage': dogage,
-            //         'dogcity': dogcity,
-            //         'dogstate': dogstate
-            //     }
-            // })
-            
+
             let headers = {
                         downloadURL: downloadURL[0],
                         dogname: dogname,
                         dogbreed: dogbreed,
                         dogage: dogage,
                         dogcity: dogcity,
-                        dogstate: dogstate
+                        dogstate: dogstate,
+                        thedate: thedate,
+                        userid: userid,
             }
             console.log(headers)
             return $http.post(`/api/dogupdate`, headers)
-            
+        }
             });
+        
+    }
+
+    this.favoriteDog = (userid, dogid) => {
+        let headers = {
+            userid: userid,
+            dogid: dogid
+        }
+        
+        return $http.post('/api/favoritedog', headers)
+    }
+
+   
+
+    this.upvoteDog = (dogid) => {
+        
+        
+        let headers = {
+            dogid: dogid
+        }
+        
+        return $http.post('/api/upvotedog', headers).then(res => res.data)
     
     }
 
-    this.favoriteDog = (user, dog) => {
-        let headers = {
-            user: user,
-            dog: dog
-        }
-        return $http.get('/api/favoritedog', headers)
+    this.getUser = () => {
+        return $http.get('/user')
     }
 
+    this.getUserDogs = (userid) => {
+        let headers = {
+            userid: userid
+        }
+        
+        return $http.get('/api/getuserdogs?userid='+userid)
+    }
+    this.getUserFavs = (userid, dogid) => {
+        let headers = {
+            userid: userid
+        }
+        
+        return $http.get('/api/getuserfavs?userid='+userid+'&dogid='+dogid)
+    }
+
+    this.makePayment = function(payload) {
+        return $http.post('/api/payment', payload);
+    } // this was in service
+
+
+
+
 });
+
+
+// function for payment :-) 
+//install stripe 

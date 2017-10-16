@@ -9,35 +9,61 @@ angular.module('personalProjApp')
                 controller: 'homeCtrl',
                 // resolve: {} if statement, if logged in, personalized homepage 
             })
-            .state('user', {
-                url: '/userpage',
+            .state('users', {
+                url: '/users',
                 templateUrl: './component/user/userTmpl.html',
-                controller: 'mainCtrl',
-                // resolve: {} 
+                controller: 'userCtrl',
+                resolve: {
+                    user: mainSrvc => mainSrvc.getUser()
+                        .then(response => response.data)
+                        .catch(err => err)
+                }
             })
             .state('upload', {
                 url: '/spotadog',
                 templateUrl: './component/upload-page/uploadTmpl.html',
                 controller: 'mainCtrl',
-                // resolve: {} 
+                resolve: {
+                    user: mainSrvc => mainSrvc.getUser()
+                        .then(response => response.data)
+                        .catch(err => err)
+                }
             })
             .state('adoption', {
                 url: '/adoptadog',
                 templateUrl: './component/adoption-page/adoptionTmpl.html',
                 controller: 'mainCtrl',
-                // resolve: {} 
+                resolve: {
+                    user: mainSrvc => mainSrvc.getUser()
+                    .then(response => response.data)
+                    .catch(err => err)
+                } 
             })
             .state('voting', {
                 url: '/dogvote',
                 templateUrl: './component/dog-voting/votingTmpl.html',
                 controller: 'mainCtrl',
-                // resolve: {} 
+                resolve: {
+                    user: mainSrvc => mainSrvc.getUser()
+                        .then(response => response.data)
+                        .catch(err => err)
+                }
             })
             .state('login', {
                 url: '/login',
                 templateUrl: './component/login/loginTmpl.html',
                 controller: 'mainCtrl',
                 // resolve: {} 
+            })
+            .state('donate', {
+                url:'/donate',
+                templateUrl: './component/donate/donateTmpl.html',
+                controller: 'mainCtrl',
+                resolve: {
+                    user: mainSrvc => mainSrvc.getUser()
+                        .then(response => response.data)
+                        .catch(err => err)
+                }
             })
 
             $urlRouterProvider.otherwise('/');

@@ -23,6 +23,7 @@
 .picture-container {
     display: flex;
     flex-direction: column;
+    margin: 10px 80px;
 }
 
 .width-control {
@@ -37,4 +38,14 @@
 
 .search-bar {
     background-color: #FFF8F0;
+}
+
+.upvote-button {
+    height: 50px;
+    width: 50px;
+}
+
+.favorite-button {
+    height: 50px;
+    width: auto;
 }

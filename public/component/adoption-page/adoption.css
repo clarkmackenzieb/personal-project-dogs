@@ -1,0 +1,36 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50%;
+}
+
+.dog-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.dog-pics {
+    height: 300px;
+    width: auto;
+}
+
+.indiv-dogs {
+    height: 300px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.dog-info-text {
+    height: 300px;
+    width: 200px;
+}
