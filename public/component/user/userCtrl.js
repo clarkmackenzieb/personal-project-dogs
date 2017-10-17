@@ -8,6 +8,7 @@ angular.module('personalProjApp').controller('userCtrl', function ($scope, user,
         
     
     $scope.openPayment = (name, desc) => {
+        console.log('WINDO STRIPE OBJ', window.StripeCheckout);
             let handler = window.StripeCheckout.configure({
                 key: 'pk_test_UdbEvwq8NlDPleKPkdAdjYTx',
                 locale: 'auto',
@@ -17,9 +18,9 @@ angular.module('personalProjApp').controller('userCtrl', function ($scope, user,
                         total: $scope.final * 100,
     
                    }
-                    appSrv.makePayment(payload).then(function(response) {
+                    mainSrvc.makePayment(payload).then(function(response) {
                         console.log(response);
-                    });
+                    }).catch(err => console.log(err));
                 }
             });
     

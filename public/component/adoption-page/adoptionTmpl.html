@@ -1,36 +1,46 @@
 <nav-bar-dir></nav-bar-dir>
 <div class="main-container">
     <div class="form-container">
-        <h3>Pet Finder</h3>
-        <form ng-submit="getAdopt(petlocation, petsize, petbreed, petage)">
-            <!-- these need ng-models -->
-            <input type="text" ng-model="petlocation" name="location" placeholder="Zip Code OR City, State">
-            <input type="text" ng-model="petsize" name="Size" placeholder="Size (S, M, L, XL)">
-            <input type="text" ng-model="petbreed" name="Breed" placeholder="Breed">
-            <input type="text" ng-model="petage" name="Age" placeholder="Age (Baby, Young, Adult, Senior)">
-            <button class="btn-primary" ng-click="getAdopt(petlocation, petsize, petbreed, petage)">Submit</button>
+        
+        <form ng-submit="getAdopt(petlocation, petsize, petbreed, petage)" class="adoption-form">
+                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pet Finder</h3>
+            
+            <input class="input" type="text" ng-model="petlocation" name="location" placeholder="Zip Code OR City, State">
+            <input class="input" type="text" ng-model="petsize" name="Size" placeholder="Size (S, M, L, XL)">
+            <input class="input" type="text" ng-model="petbreed" name="Breed" placeholder="Breed">
+            <input class="input" type="text" ng-model="petage" name="Age" placeholder="Age (Baby, Young, Adult, Senior)">
+            <button class="btn" ng-click="getAdopt(petlocation, petsize, petbreed, petage)">Submit</button>
         </form>
-        <h3>Shelter Finder</h3>
-        <form ng-submit="getShelter(shelterlocation)">
+        
+        <form class="adoption-form">
+                <h3>&nbsp;&nbsp;Shelter Finder</h3>
             <!-- this section, click to see pets in this shelter -->
-            <input type="text" ng-model="shelterlocation" name="location" placeholder="ZIP Code or City, State">
-            <button class="btn-primary" ng-click="getShelter(shelterlocation)">Submit</button>
+            <input class="input" type="text" ng-model="shelterlocation" name="location" placeholder="ZIP Code or City, State">
+            <button class="btn" ng-click="getShelter(shelterlocation)">Submit</button>
         </form>
         
     </div>
     <div class="dog-container" >
-        <div class="indiv-dogs" ng-repeat="dog in adoptdogs"> 
+        <div class="indiv-dogs" ng-if="!shelters" ng-repeat="dog in adoptdogs"> 
             <img class="dog-pics" src="{{dog.media.photos.photo[2].$t}}" alt="">
             <div class="dog-info-text">
             <p>Name: {{dog.name.$t}}</p>
             <p>Age: {{dog.age.$t}}</p>
+            <p>Contact Info</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Email: {{dog.contact.email.$t}}</p>
+            <p ng-if="dog.contact.phone.$t">&nbsp;&nbsp;&nbsp;&nbsp;Phone: {{dog.contact.phone.$t}}</p>
             <!-- ng-repeat only works for multiples; some dogs have only 1 breed -->
-            <p>Breed(s): 
+            <p>| 
                 <span ng-repeat="breed in dog.breeds.breed">| {{breed.$t}} | </span> <span ng-if="dog.breeds.breed"> {{dog.breeds.breed.$t}} </span>
-            </p>
+            |</p>
             </div>
         </div>
-        <div ng-repeat="shelter in shelters"> {{shelter.name}} </div>
+        <div ng-repeat="shelter in shelters" class="shelter-list">
+            <p>{{shelter.name.$t}}</p>
+            <p>{{shelter.adress1.$t}} <span ng-if="shelter.address2.$t">{{shelter.address2.$t}}</span> <br>{{shelter.city.$t}}, {{shelter.state.$t}}, {{shelter.zip.$t}}</p>
+            <p>{{shelter.phone.$t}}</p>
+            <p>{{shelter.email.$t}}</p> 
+        </div>
     </div>
 
 </div>

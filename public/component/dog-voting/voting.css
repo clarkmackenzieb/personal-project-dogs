@@ -1,9 +1,14 @@
 .body {
-    background-color: #FFF8F0;
+    background-color: #240115;
+}
+
+.input::placeholder {
+    color: white;
+    text-align: center;
 }
 
 .background-container {
-    background-color: #FFF8F0;
+    background-color: #240115;
     height: 100%;
     width: 100%;
 }
@@ -20,10 +25,19 @@
     width: auto;
 }
 
+.dog-info-text {
+    padding: 0pc 10px;
+}
+
 .picture-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 10px 80px;
+    border: solid 5px #FFF8F0;
+    border-radius: 10px;
+    font-family: 'PT Sans';
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .width-control {
@@ -37,7 +51,8 @@
 }
 
 .search-bar {
-    background-color: #FFF8F0;
+    background-color: #240115;
+    color: white;
 }
 
 .upvote-button {

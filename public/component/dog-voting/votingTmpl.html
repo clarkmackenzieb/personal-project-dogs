@@ -5,18 +5,18 @@
 
                 <form class="width-control" role="form">
                         <div class="search-bar">
-                          <input class="form-control" placeholder="Search Name" ng-model="searchFilter.date_uploaded">
-                          <input class="form-control" placeholder="Search State" ng-model="searchFilter.location_state">
-                          <input class="form-control" placeholder="Search Breed" ng-model="searchFilter.breed">
+                          <input class="input" placeholder="Search Name" ng-model="searchFilter.dog_name">
+                          <input class="input" placeholder="Search State" ng-model="searchFilter.location_state">
+                          <input class="input" placeholder="Search Breed" ng-model="searchFilter.breed">
                   
-                          <select class="form-control" ng-model="sortProp">
-                            <option value="date_uploaded">Date Uploaded</option>
+                          <select class="form-control input" ng-model="sortProp">
+                            <option  value="date_uploaded" selected="selected">Date Uploaded</option>
                             <option value="votes">#Votes</option>
                             <option value="location_city">City</option>
                             <option value="loation_state">State</option>
                           </select>
                   
-                          <select class="form-control" ng-model="sortDirection">
+                          <select class=" form-control input" ng-model="sortDirection">
                             <option value="-">Descending</option>
                             <option value="+">Ascending</option>
                           </select>
@@ -30,14 +30,15 @@
     <div class="rows-of-pics">
     <div class="picture-container" ng-repeat="dog in dogs  | filter: searchFilter | orderBy: '+'+'dog_name' | orderBy: sortDirection + sortProp;">
         <img class="imgbox" src="{{dog.dog_picture}}" alt="" srcset="">
-        <p ng-model="dogname">{{dog.dog_name}}</p>
-        <p>{{dog.breed}}</p>
+        <div class="dog-info-text">
+        <p ng-model="dogname">Name: {{dog.dog_name}}</p>
+        <p>| {{dog.breed}} |</p>
         <p>Age: {{dog.age}}</p>
         <p>Spotted in {{dog.location_city}}, {{dog.location_state}}</p>
         <p ng-model="dogvotes">{{dog.votes}}
         <img class="upvote-button" src="../../photos/corgi1600.png" ng-click="upvoteDog(dog.dog_id)" alt="notworking">
         <img class="favorite-button" src="../../photos/heart.png" alt="not working" ng-click="favoriteDog(dog.dog_id)"></p>
-        
+      </div>
     </div>
 </div>
 </div>

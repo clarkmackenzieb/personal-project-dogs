@@ -66,6 +66,12 @@ const getAdoptDogs = (req, res) => {
 
 }
 
+const getShelters = (req, res) => {
+
+  axios.get(req.body.request).then(response => res.json(response.data));
+
+}
+
 
 module.exports = {
     uploadImages,
@@ -76,5 +82,6 @@ module.exports = {
     getUser,
     getUserFavs,
     getUserDogs,
-    getAdoptDogs
+    getAdoptDogs,
+    getShelters
   }

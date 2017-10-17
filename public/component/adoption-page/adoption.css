@@ -1,13 +1,33 @@
+html {
+    background-color: #240115;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
+    background-color: #240115;
+}
+
+.input {
+    margin:10px 10px;
+    color: white;
+}
+
+h3 {
+    color: white;
 }
 
 .form-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 50%;
+    height: 300px;
+}
+
+.adoption-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .dog-container {
@@ -15,11 +35,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+
 }
 
 .dog-pics {
     height: 300px;
     width: auto;
+    border: solid 5px #FFF8F0;
+    border-radius: 10px;
+    
+}
+
+.picture-container {
+    background-color: white;
 }
 
 .indiv-dogs {
@@ -27,10 +55,38 @@
     width: auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    margin: 50px 30px;
+    font-family: 'PT Sans';
+    font-weight: bold;
+    font-size: 15px;
+    color: #FFF8F0;
 }
 
 .dog-info-text {
-    height: 300px;
+    height: 200px;
     width: 200px;
+    padding: 0px 20px;
+}
+
+.width-control {
+    display: flex;
+    
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 20px;
+}
+
+.shelter-list {
+    background-color: #FFF8F0;
+    color: #240115; 
+    border-radius: 10px;
+    font-family: "PT Sans";
+    margin: 20px 20px;
+    padding: 5px 5px;
+    font-weight: bold;
 }

@@ -5,6 +5,7 @@
     <h1 ui-sref="adoption" class="nav-color blue pointy-cursor">Adoption</h1>
     <h1 class="nav-color yellow pointy-cursor"   ng-if="!user.authid"><a href="/login" id="login">Login</a></h1>
     <h1 ui-sref="users" class="nav-color yellow pointy-cursor" ng-if="user.authid">My Page</h1>
+    <h1 class="nav-color blue pointy-cursor" ng-if="user.authid"><a href="/user/logout" id="login">Logout</a></h1>
 </div>
 
 

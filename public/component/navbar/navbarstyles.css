@@ -1,23 +1,24 @@
+
+
 .blue {
-    background-color: #87F5FB;
+    background-color: #FAEC22;
 
 }
 
 #login {
-    color:white;
+    color:#240115;
 }
 
 .nav-color {
-    padding: 10px;
-    color: white;
+    padding: 10px; 
     width: 100%;
+    color: #240115;
     height: 75px;
     font-size: 30px;
 }
 
 .yellow {
-    background-color: #240115;
-
+    background-color: #A07178;
 }
 
 .nav-bar {
@@ -27,7 +28,6 @@
     justify-content: space-between;
     text-align: center;
     font-family: Pacifico;
-    
 }
 .pointy-cursor {
     cursor: pointer;

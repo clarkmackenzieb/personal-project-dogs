@@ -6,12 +6,12 @@
     background-position: center;
     height: 500px;
     width: auto;
-    background-size: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-position-y: -250px;
-}
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} 
+
 
 .photo-cred {
     float: left; 
@@ -38,6 +38,7 @@
     margin-left: 40px;
     font-size: 60px;
     width: 300px;
+    color: white;
 }
 
 .title {
@@ -45,6 +46,7 @@
     width: 450px;
     margin-left: 40px;
     margin-bottom: 120px;
+    color: white;
 }
 
 .two-divs {
@@ -112,6 +114,6 @@
 }
 
 a {
-    color: #87F5FB;
+    color: #FAEC22;
     text-decoration: none;
 }

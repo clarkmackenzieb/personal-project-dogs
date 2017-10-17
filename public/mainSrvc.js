@@ -33,7 +33,10 @@ angular.module('personalProjApp').service('mainSrvc', function($http){
     }
 
     this.getShelter = (shelterlocation) => {
-        return $http.get("http://api.petfinder.com/shelter.find?key=9d6a47d438e8fbfbcfc69f98cab12a30&format=json&location="+shelterlocation);
+
+        let request = "http://api.petfinder.com/shelter.find?key=9d6a47d438e8fbfbcfc69f98cab12a30&format=json&location="+shelterlocation;
+
+        return $http.post('/api/getshelters', {request}).catch(err => console.log(err));
     }
 
     this.uploadImage = (file, dogname, dogbreed, dogage, dogcity, dogstate, thedate, userid) => {

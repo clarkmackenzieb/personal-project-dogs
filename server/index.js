@@ -7,6 +7,7 @@ const cors = require('cors');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 const axios = require('axios');
+const stripe = require('stripe')('sk_test_tYorYCXyoJ3vm1PXHt8miaRi');
 
 const imgCtrl = require('./imgCtrl');
 
@@ -52,6 +53,25 @@ app.use(passport.session());
 
 // using passport to access auth0
 // { domain: config.auth0.domain ... etc}
+
+// let options = {
+//     theme: {
+//       authButtons: {
+//         "testConnection": {
+//           displayName: "The Dog Spot",
+//           primaryColor: "#240115",
+//           foregroundColor: "#000000",
+//           icon: "https://relaxdog-4053.kxcdn.com/media/1140/dog_favicon_01home.png?width=58"
+//         },
+//         "testConnection2": {
+//           primaryColor: "#000000",
+//           foregroundColor: "#ffffff",
+//         }
+//       }
+//     }
+//   };
+
+// let lock = new Auth0Lock('tlca6obkxOhc8z5ePk3RR6e22Fhi58cg', 'clarkmackenzie.auth0.com', options);
 
 passport.use(new Auth0Strategy({
     domain,
@@ -128,6 +148,7 @@ app.get('/api/getdogs', imgCtrl.getDogs);
 app.post('/api/favoritedog', imgCtrl.favoriteDog) //gotta finish this b
 app.post('/api/upvotedog', imgCtrl.upvoteDog)
 app.post('/api/getadoptdogs', imgCtrl.getAdoptDogs)
+app.post('/api/getshelters', imgCtrl.getShelters)
 
 // Charge Route
 app.post('/api/payment', (req, res) => {
@@ -138,10 +159,9 @@ app.post('/api/payment', (req, res) => {
     const cardId = req.body.token.card.id;  
 
 stripe.customers.create({
-    email,
-    source: id
-  })
-  .then(customer => stripe.charges.create({
+    email: email,
+    id: id
+  }).then(customer => stripe.charges.create({
     amount,
     description: 'ASPCA Donation',
     currency: 'usd',

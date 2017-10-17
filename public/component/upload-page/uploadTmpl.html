@@ -1,17 +1,24 @@
 <nav-bar-dir></nav-bar-dir>
 
 <div class="container-div">
-
-<form name="form">
+<div class="columns">
+<form name="form" class="form-display"
+>
         <button class="btn margin-bottom" name="image" ngf-select ng-model="image">Upload image</button>
-        <input type="text" name="Dog Name" ng-model="dogname" placeholder="Dog Name"><br>
+        <input  type="text" name="Dog Name" ng-model="dogname" placeholder="Dog Name"><br>
         <input type="text" name="Dog Breed" ng-model="dogbreed" placeholder="Dog Breed"><br>
-        <input type="text" name="Dog Age" ng-model="dogage" placeholder="Dog Age"><br>
+        <input type="text" name="Dog Age" ng-model="dogage" placeholder="Dog Age (in years)"><br>
         <input type="text" name="Dog City" ng-model="dogcity" placeholder="City"><br>
         <input type="text" name="Dog State" ng-model="dogstate" placeholder="State"><br>
         <button class="btn" ng-click="submit(image, dogname, dogbreed, dogage, dogcity, dogstate)">Submit</button>
+        
 </form>
+<div class="alert alert-success give-me-space" ng-if="uploadcheck">
+                <strong>Success!</strong>Your information has beed dog-logged! 
+              </div>
+        </div>
 
 <img class="img-box" ngf-thumbnail="image">
 
 </div>
+
