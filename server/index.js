@@ -19,7 +19,7 @@ const { dbUser, dbPass, database } = require('./config');
 const { domain, clientID, clientSecret } = require('./config');
 //.auth0 ?
 
-const port = 80;
+const port = 3005;
 
 const connectionString = `postgress://${dbUser}:${dbPass}@localhost/${database}`;
 

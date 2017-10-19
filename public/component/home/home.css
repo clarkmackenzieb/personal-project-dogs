@@ -67,13 +67,13 @@
 
 
 .info-section {
-    width: 50vw;
+    width: 50%;
     height: auto;
 
 }
 
 .mission {
-    width: 50vw;
+    width: 50%;
     height: auto;
 
 }
@@ -84,6 +84,7 @@
     width: 400px;
     margin: 100px auto;
     padding: 20px 20px;
+    
 }
 
 .get-started {
@@ -92,8 +93,12 @@
     background-position: center;
     height: 500px;
     width: auto;
-    background-size: 100%;
-}
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} 
+
 .actual-opacity {
     background: rgba(0,0,0,0.7);
 }
@@ -116,4 +121,105 @@
 a {
     color: #FAEC22;
     text-decoration: none;
+}
+
+.dropdown {
+    display: none;
+}
+
+.hamburger-menu {
+    display: none;
+}
+/* MEDIA STARTS HERE
+///
+///
+/// */
+@media (max-width: 375px) {
+    
+.photo-cred {
+        display: none;
+}
+
+   
+.hamburger-menu {
+    display: flex;
+}
+
+.nav-bar {
+    display: none;
+}
+
+.dropdown {
+    display: inherit;
+}
+
+.main-container-div {
+    width: 375px;
+}
+
+.welcome {
+    margin-left: 40px;
+    font-size: 40px;
+    width: 300px;
+    color: #FAEC22;
+    margin-top: 50px;
+}
+
+.title {
+    font-size: 70px;
+    width: 300px;
+    margin-left: 40px;
+    margin-bottom: 120px;
+    color: #FAEC22;
+}
+
+.main-img {
+    height: 400px;
+}
+
+.text {
+    transform: rotate(0deg);
+}
+
+.small-circle {
+    overflow: scroll;
+    width: 150px;
+}
+
+.small-mission-side {
+    display: none;
+}
+
+.getting-started {
+    float: left;
+    width: 300px;
+    margin-left: 40px;
+}
+
+.small-info-side {
+    width: 300px;
+    margin-left: 40px;
+}
+
+.small-get-started-side {
+    width: 300px;
+    margin-left: 40px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #b46868;
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+} /* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-button {
+    background-color: #FAEC22;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {
+    background-color: black;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
 }

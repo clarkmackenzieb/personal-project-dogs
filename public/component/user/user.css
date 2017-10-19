@@ -1,6 +1,20 @@
+
 .background-color {
     background-color: #FFF8F0;
     font-family: Pacifico;
+    margin: 10px 10px;
+}
+/* comment*/
+.welcome-text {
+    margin: 10px 10px;
+}
+
+.donation-text {
+    font-family: "PT Sans";
+    margin: 10px 10px;
+}
+
+.user-header-text {
     margin: 10px 10px;
 }
 
@@ -14,4 +28,55 @@
     margin: 10px 500px;
     width: 200px;
     height: 40px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+
+@media (max-width: 375px) {
+
+    .photo-cred {
+        display: none;
+    }
+
+   
+.hamburger-menu {
+    display: inline;
+}
+.small-circle {
+    overflow: scroll;
+}
+
+    .purple-background {
+        height: 50px;
+        background-color: #240115;
+    }
+
+    .welcome-text {
+        margin-top: 0px;
+    }
+
+    .input-box {
+        margin: 10px 10px;
+    }
+    
+    .user-header-text {
+        margin: 10px 0px;
+    }
+
+    .imgbox-favs {
+        max-width: 350px;
+        height: auto;
+        border: solid 5px #240115;
+        border-radius: 10px;
+        margin: 10px 10px;
+    }
+
+    .background-color {
+        width: 375px;
+        margin: 0 0;
+    }
+
 }

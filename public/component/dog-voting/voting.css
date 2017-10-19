@@ -64,3 +64,11 @@
     height: 50px;
     width: auto;
 }
+
+.fav-alert {
+    width: 200px;
+    height: 100px;
+}
+
+/* swinging animation for button */
+

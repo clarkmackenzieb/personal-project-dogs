@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Patua+One" rel="stylesheet">
     <link rel="icon" href="https://relaxdog-4053.kxcdn.com/media/1140/dog_favicon_01home.png?width=58">
     <!-- BRING IN YA CSS -->
+    <link rel="stylesheet" href="./component/hamburger/hamburgerstyles.css">
     <link rel="stylesheet" href="./component/navbar/navbarstyles.css">
     <link rel="stylesheet" href="./component/dog-voting/voting.css">
     <link rel="stylesheet" href="./component/home/home.css">
@@ -19,6 +20,8 @@
     <title>Personal-Project</title>
 </head>
 <body>
+    <nav-bar-dir></nav-bar-dir>
+    <hamburger-dir></hamburger-dir>
     
     <ui-view></ui-view>
 </body>
@@ -37,9 +40,9 @@
   firebase.initializeApp(config);
 </script>
 
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>  
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>  
 <script src="ng-file-upload.js"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
@@ -48,12 +51,14 @@
 <script src="./mainCtrl.js"></script>
 <script src="./mainSrvc.js"></script>
 
+<script src="./component/hamburger/hamburgerCtrl.js"></script>
 <script src="./component/adoption-page/adoptionCtrl.js"></script>
 <script src="./component/dog-voting/votingCtrl.js"></script>
 <script src="./component/home/homeCtrl.js"></script>
 <script src="./component/upload-page/uploadCtrl.js"></script>
 <script src="./component/user/userCtrl.js"></script>
 <script src="./component/navbar/navBarDir.js"></script>
+<script src="./component/hamburger/hamburgerDir.js"></script>
 <script src="./component/login/loginCtrl.js"></script>
 
 </html>

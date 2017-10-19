@@ -6,7 +6,8 @@ angular.module('personalProjApp').controller('votingCtrl', function ($scope, use
 
     $scope.favoriteDog = function(dogid){
         mainSrvc.favoriteDog($scope.user.authid, dogid);
-        alert("Dog favorited!") 
+        $scope.favoritecheck = true;
+        if($scope.user.authid){alert("Dog Favorited!")}
             }
         
     $scope.sortProp;
@@ -20,5 +21,11 @@ angular.module('personalProjApp').controller('votingCtrl', function ($scope, use
             
             
             
-            
+                 
+
+        
+    
+
+                    
+
 });

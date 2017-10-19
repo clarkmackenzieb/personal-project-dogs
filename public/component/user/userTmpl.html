@@ -1,8 +1,51 @@
-<nav-bar-dir></nav-bar-dir>
-<div class="background-color">
-<h1>Welcome back, {{user.username}}!</h1>
 
-<h5>Please consider making a donation to the American Society for the Prevention of Cruelty to Animals! Even a small donation can change an animal's life.</h5>
+<nav-bar-dir></nav-bar-dir>
+<div class="purple-background">
+<div id="page-wrapper">
+<div class="hamburger-menu">
+        <div id="btn">
+                <div id='top'></div>
+                <div id='middle'></div>
+                <div id='bottom'></div>
+        </div>
+        <div id="box">
+                <div id="items">
+                    
+                        <div class="item" ui-sref="home">Home</div>
+                        <div class="item" ui-sref="upload">Dog Spot</div>
+                        <div class="item" ui-sref="voting">Dog Vote</div>
+                        <div class="item" ui-sref="adoption">Adoption</div>
+                        <div class="item" ng-if="!user.authid"><a id="home-login" href="/login" >Login</a></div>
+                        <div class="item" ng-if="user.authid"><a id="home-login" ui-sref="users">My Page</a></div><div class="item" ng-if="user.authid"><a id="home-login" href="/user/logout" >Logout</a></div>
+                        
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="background-color">
+    <div class="hamburger-menu">
+        <div id="btn">
+                <div id='top'></div>
+                <div id='middle'></div>
+                <div id='bottom'></div>
+        </div>
+        <div id="box">
+                <div id="items">
+                    
+                        <div class="item" ui-sref="home">Home</div>
+                        <div class="item" ui-sref="upload">Dog Spot</div>
+                        <div class="item" ui-sref="voting">Dog Vote</div>
+                        <div class="item" ui-sref="adoption">Adoption</div>
+                        <div class="item" ng-if="!user.authid"><a id="home-login" href="/login" >Login</a></div>
+                        <div class="item" ng-if="user.authid"><a id="home-login" ui-sref="users">My Page</a></div><div class="item" ng-if="user.authid"><a id="home-login" href="/user/logout" >Logout</a></div>
+                        
+                </div>
+        </div>
+    </div>
+<h1 class="welcome-text">Welcome back, {{user.username}}!</h1>
+
+<h5 class="donation-text">Please consider making a donation to the American Society for the Prevention of Cruelty to Animals! Even a small donation can change an animal's life. This button is connected to Stripe for payments, but is non-functional. Please use a dummy card!</h5>
 <div class="donation-form-box">
 <form>
     <input class="input-box" type="text" ng-model="final" placeholder="Donation Amount">
@@ -10,17 +53,17 @@
 </form>
 </div>
 
-<h4>Favorite Dogs</h4>
+<h4 class="user-header-text"><br>Favorite Dogs</h4>
 <div class="rows-of-pics">
 <div class="flex" ng-repeat="fav in user_favs">
 
-    <img class="imgbox" src="{{fav.dog_picture}}" alt="" srcset="">
+    <img class="imgbox imgbox-favs" src="{{fav.dog_picture}}" alt="" srcset="">
 </div>
 </div>
-<h4>Uploaded Dogs</h4>
+<h4 class="user-header-text">Uploaded Dogs</h4>
+<p class="donation-text" ng-if="dogmessage">{{dogmessage}}</p>
 <div class="rows-of-pics">
 <div class="flex" ng-repeat="dog in user_dogs">
-
     <img class="imgbox" src="{{dog.dog_picture}}" alt="" srcset="">
 </div>
 </div>

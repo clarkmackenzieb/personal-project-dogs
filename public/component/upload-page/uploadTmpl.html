@@ -2,6 +2,9 @@
 
 <div class="container-div">
 <div class="columns">
+        <div class="alert alert-danger give-me-space" ng-if="!user.authid">
+                <strong>Stop!</strong> Please log in before trying to log a dog!
+        </div>
 <form name="form" class="form-display"
 >
         <button class="btn margin-bottom" name="image" ngf-select ng-model="image">Upload image</button>
@@ -13,9 +16,9 @@
         <button class="btn" ng-click="submit(image, dogname, dogbreed, dogage, dogcity, dogstate)">Submit</button>
         
 </form>
-<div class="alert alert-success give-me-space" ng-if="uploadcheck">
-                <strong>Success!</strong>Your information has beed dog-logged! 
-              </div>
+<div class="alert alert-success give-me-space" ng-if="user.authid && uploadcheck">
+        <strong>Success!</strong> Your information has been dog-logged! 
+</div>
         </div>
 
 <img class="img-box" ngf-thumbnail="image">
