@@ -2,6 +2,8 @@ angular.module('personalProjApp').controller('votingCtrl', function ($scope, use
     
     $scope.user = user.data && user.data.err ? user.data.err : user;
 
+   
+
     mainSrvc.getDogs().then(res => $scope.dogs = res.data)
 
     $scope.favoriteDog = function(dogid){

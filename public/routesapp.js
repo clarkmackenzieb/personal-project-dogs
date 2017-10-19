@@ -18,9 +18,9 @@ angular.module('personalProjApp')
                 templateUrl: './component/user/userTmpl.html',
                 controller: 'userCtrl',
                 resolve: {
-                    user: mainSrvc => mainSrvc.getUser()
+                    user: (mainSrvc, $state) => mainSrvc.getUser()
                         .then(response => response.data)
-                        .catch(err => err)
+                        .catch(err => $state.go('home'))
                 },
             })
             .state('upload', {

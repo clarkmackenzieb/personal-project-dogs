@@ -1,10 +1,13 @@
 .container-div {
     background-image: url('../../photos/james-bold-287536.jpg');
-    background-size: 105%;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
     height: 100vh;
-    display: flex;
+    width: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .form-display {
@@ -56,4 +59,8 @@ input {
 
     background: rgba(255,255,255,0.5);
 
+}
+
+.upload-input::placeholder {
+    color: #240115;
 }

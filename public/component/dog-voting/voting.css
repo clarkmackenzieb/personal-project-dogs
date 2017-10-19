@@ -2,9 +2,17 @@
     background-color: #240115;
 }
 
+.nav-bar {
+    margin: 0 0;
+}
+
 .input::placeholder {
-    color: white;
+    color: #240115;
     text-align: center;
+}
+
+.input {
+    color: #240115;
 }
 
 .background-container {
@@ -52,7 +60,7 @@
 
 .search-bar {
     background-color: #240115;
-    color: white;
+    color: #240115;
 }
 
 .upvote-button {
@@ -72,3 +80,35 @@
 
 /* swinging animation for button */
 
+
+@media (max-width: 375px) {
+
+    .rows-of-pics {
+        flex-direction: column;
+        max-width: 360;
+        margin: 10px 10px;
+        justify-content: space-around;
+    }
+
+    .picture-container {
+        flex-direction: column;
+        margin: 10px 0px;
+        height: 700px;
+        
+    }
+
+    img {
+        max-height: 400px;
+        width: auto;
+    }
+
+    .dog-info-text {
+        font-size: 16px;
+        padding: 0px 1px;
+        height: 300px;
+    }
+
+    .form-control {
+        display: none;
+    }
+}

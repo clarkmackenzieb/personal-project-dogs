@@ -21,7 +21,7 @@ const { domain, clientID, clientSecret } = require('./config');
 
 //comment comment
 
-const port = 80;
+const port = 3005;
 //for editing it's 3005
 //for servering live it's 80
 
@@ -131,7 +131,7 @@ app.get('/auth/callback',
 // if not logged in, send error message and catch in resolve
 // else send user
 app.get('/user', (req, res) => {
-    if (!req.user) return res.status(401).json({err: 'User Not Authenticated'});
+    if (!req.user) return res.status(500).json({err: 'User Not Authenticated'});
     res.status(200).json(req.user);
 });
 

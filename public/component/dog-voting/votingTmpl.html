@@ -1,3 +1,5 @@
+<nav-bar-dir></nav-bar-dir>
+<hamburger-dir></hamburger-dir>
 
 <div class="background-container">
         <div class="search-bar">
@@ -9,15 +11,15 @@
                           <input class="input" placeholder="Search State" ng-model="searchFilter.location_state">
                           <input class="input" placeholder="Search Breed" ng-model="searchFilter.breed">
                   
-                          <select class="form-control input" ng-model="sortProp">
-                            <option  value="date_uploaded" selected="selected">Date Uploaded</option>
-                            <option value="votes">#Votes</option>
+                          <select id="selector" class="form-control input" ng-model="sortProp">
+                            <option value="date_uploaded" selected>Date Uploaded</option>
+                            <option value="upvotes">#Votes</option>
                             <option value="location_city">City</option>
-                            <option value="loation_state">State</option>
+                            <option value="location_state">State</option>
                           </select>
                   
-                          <select class=" form-control input" ng-model="sortDirection">
-                            <option value="-">Descending</option>
+                          <select class="form-control input" ng-model="sortDirection" >
+                            <option value="-" selected>Descending</option>
                             <option value="+">Ascending</option>
                           </select>
                     

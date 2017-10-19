@@ -22,12 +22,12 @@ angular.module('personalProjApp').controller('hamburgerCtrl',function($scope, ma
                 document.querySelector('#box').classList.toggle('active');
         });
         
-        document.querySelector('#page-wrapper').addEventListener('click', function (event) {
-                if (document.querySelector('#box').classList.contains('active')) {
-                        document.querySelector('#btn').classList.remove('inactive');
-                        document.querySelector('#box').classList.remove('inactive');
-                }
-        });
+        // document.querySelector('#page-wrapper').addEventListener('click', function (event) {
+        //         if (document.querySelector('#box').classList.contains('active')) {
+        //                 document.querySelector('#btn').classList.remove('inactive');
+        //                 document.querySelector('#box').classList.remove('inactive');
+        //         }
+        // });
         
         window.addEventListener('keydown', function (event) {
                 if (document.querySelector('#box').classList.contains('active') && event.keyCode === 27) {
