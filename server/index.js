@@ -21,6 +21,7 @@ const { domain, clientID, clientSecret } = require('./config');
 
 const port = 80;
 //for editing it's 3005
+//for servering live it's 80
 
 const connectionString = `postgress://${dbUser}:${dbPass}@localhost/${database}`;
 
