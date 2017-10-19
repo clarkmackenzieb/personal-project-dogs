@@ -81,7 +81,7 @@
 /* swinging animation for button */
 
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
 
     .rows-of-pics {
         flex-direction: column;
