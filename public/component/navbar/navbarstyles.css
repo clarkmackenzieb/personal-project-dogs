@@ -13,17 +13,18 @@
     padding: 10px; 
     width: 100%;
     color: #240115;
-    height: 75px;
+    height: 80px;
     font-size: 30px;
     margin: 0 0;
 }
 
 .yellow {
     background-color: #A07178;
+    margin: 0 0;
 }
 
 .nav-bar {
-    height: 75px;
+    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -56,10 +56,12 @@
     height: 100px;
     width: 200px;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 50px;
 }
 
 .input-box {
-    margin: 10px 500px;
     width: 200px;
     height: 40px;
 }

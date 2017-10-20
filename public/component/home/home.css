@@ -41,6 +41,10 @@
     color: white;
 }
 
+.pc-top {
+    margin-top: 40px;
+}
+
 .title {
     font-size: 100px;
     width: 450px;
@@ -80,10 +84,13 @@
 
 .small-circle {
     border-radius: 10px;
-    height: 400px;
-    width: 400px;
+    height: 70%;
+    width: 70%;
     margin: 100px auto;
     padding: 20px 20px;
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
     
 }
 
@@ -130,6 +137,29 @@ a {
 .hamburger-menu {
     display: none;
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+} /* this targets the default scrollbar (compulsory) */
+
+::-webkit-scrollbar-track {
+    background-color: #b46868;
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+} /* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-button {
+    background-color: white;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {
+    background-color: black;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+
+
 /* MEDIA STARTS HERE
 ///
 ///
