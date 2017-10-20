@@ -21,7 +21,7 @@ const { domain, clientID, clientSecret } = require('./config');
 
 //comment comment
 
-const port = 3005;
+const port = 80;
 //for editing it's 3005
 //for servering live it's 80
 
