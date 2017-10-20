@@ -154,7 +154,7 @@ a {
 }
 
 .main-container-div {
-    width: 375px;
+    width: 100vw;
 }
 
 .welcome {
@@ -196,13 +196,21 @@ a {
     margin-left: 40px;
 }
 
+.info-section {
+    width: 100%;
+}
+
+.mission {
+    display: none;
+}
+
 .small-info-side {
-    width: 300px;
+    width: 80%;
     margin-left: 40px;
 }
 
 .small-get-started-side {
-    width: 300px;
+    width: 80%;
     margin-left: 40px;
 }
 

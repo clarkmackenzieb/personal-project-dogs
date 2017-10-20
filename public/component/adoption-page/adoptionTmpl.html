@@ -7,17 +7,17 @@
         <form ng-submit="getAdopt(petlocation, petsize, petbreed, petage)" class="adoption-form">
                 <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pet Finder</h3>
             
-            <input class="input" type="text" ng-model="petlocation" name="location" placeholder="Zip Code OR City, State">
-            <input class="input" type="text" ng-model="petsize" name="Size" placeholder="Size (S, M, L, XL)">
-            <input class="input" type="text" ng-model="petbreed" name="Breed" placeholder="Breed">
-            <input class="input" type="text" ng-model="petage" name="Age" placeholder="Age (Baby, Young, Adult, Senior)">
+            <input class="input-adopt" type="text" ng-model="petlocation" name="location" placeholder="Zip Code OR City, State">
+            <input class="input-adopt" type="text" ng-model="petsize" name="Size" placeholder="Size (S, M, L, XL)">
+            <input class="input-adopt" type="text" ng-model="petbreed" name="Breed" placeholder="Breed">
+            <input class="input-adopt" type="text" ng-model="petage" name="Age" placeholder="Age (Baby, Young, Adult, Senior)">
             <button class="btn" ng-click="getAdopt(petlocation, petsize, petbreed, petage)">Submit</button>
         </form>
         
         <form class="adoption-form">
                 <h3>&nbsp;&nbsp;Shelter Finder</h3>
             <!-- this section, click to see pets in this shelter -->
-            <input class="input" type="text" ng-model="shelterlocation" name="location" placeholder="ZIP Code or City, State">
+            <input class="input-adopt" type="text" ng-model="shelterlocation" name="location" placeholder="ZIP Code or City, State">
             <button class="btn" ng-click="getShelter(shelterlocation)">Submit</button>
         </form>
         

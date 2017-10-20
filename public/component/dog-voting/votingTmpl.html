@@ -37,11 +37,11 @@
     <div class="picture-container" ng-repeat="dog in dogs  | filter: searchFilter | orderBy: '+'+'dog_name' | orderBy: sortDirection + sortProp;">
         <img class="imgbox" src="{{dog.dog_picture}}" alt="" srcset="">
         <div class="dog-info-text">
-        <p ng-model="dogname">Name: {{dog.dog_name}}</p>
-        <p>| {{dog.breed}} |</p>
-        <p>Age: {{dog.age}}</p>
-        <p>Spotted in {{dog.location_city}}, {{dog.location_state}}</p>
-        <p ng-model="dogvotes">{{dog.votes}}
+        <p class="dog-p" ng-model="dogname">Name: {{dog.dog_name}}</p>
+        <p class="dog-p">| {{dog.breed}} |</p>
+        <p class="dog-p" >Age: {{dog.age}}</p>
+        <p class="dog-p" >Spotted in {{dog.location_city}}, {{dog.location_state}}</p>
+        <p class="dog-p" ng-model="dogvotes">{{dog.votes}}
         <img class="upvote-button" src="../../photos/corgi1600.png" ng-click="upvoteDog(dog.dog_id)" alt="notworking">
         <a ><img class="favorite-button swing"  src="../../photos/heart.png" alt="not working" ng-click="favoriteDog(dog.dog_id)"></a></p>
       </div>
