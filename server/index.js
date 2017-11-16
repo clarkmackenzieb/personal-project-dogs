@@ -28,7 +28,7 @@ const port = process.env.PORT;
 //for editing it's 3005
 //for servering live it's 80
 
-const connectionString = `postgress://${dbUser}:${dbPass}@localhost/${database}`;
+const connectionString = process.env.DATABASE_URL;
 
 const app = express();
 
