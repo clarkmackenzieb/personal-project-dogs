@@ -11,12 +11,9 @@ const stripe = require('stripe')('sk_test_tYorYCXyoJ3vm1PXHt8miaRi');
 
 const imgCtrl = require('./imgCtrl');
 
-const config = require('./config');
-const { secret } = require('./config');
-// .session ? 
-const { dbUser, dbPass, database } = require('./config');
-// .db ?
-const { domain, clientID, clientSecret } = require('./config');
+const config = process.ENV;
+
+const { secret, dbUser, dbPass, database, domain, clientID, clientSecret } = process.ENV;
 //.auth0 ?
 
 //comment comment
