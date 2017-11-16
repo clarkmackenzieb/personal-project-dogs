@@ -11,9 +11,15 @@ const stripe = require('stripe')('sk_test_tYorYCXyoJ3vm1PXHt8miaRi');
 
 const imgCtrl = require('./imgCtrl');
 
-const config = process.ENV;
+const secret = process.env.secret;
+const dbUser = process.env.dbUser;
+const dbPass = process.env.dbPass;
+const database = process.env.database;
+const domain = process.env.domain;
+const clientID = process.env.clientID;
+const clientSecret = process.env.clientSecret;
 
-const { secret, dbUser, dbPass, database, domain, clientID, clientSecret } = process.ENV;
+
 //.auth0 ?
 
 //comment comment
